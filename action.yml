@@ -1,0 +1,25 @@
+name: 'Set JSON Field'
+description: 'This GitHub Action helps edit a JSON file and set a field value'
+author: 'Jossef Harush'
+inputs:
+  file:
+    required: true
+    description: "file name/path to edit. e.g 'package.json'"
+  field:
+    required: true
+    description: "field to edit. can be nested fields. e.g 'version' or 'metadata.scripts.build'"
+  value:
+    required: true
+    description: "value to set. string. e.g. 'v1.2.3'"
+  parse_json:
+    required: false
+    default: ""
+    description: "optional. if set to any non-empty value will parse the data in 'value' field to JSON"
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'edit'
+  color: 'yellow'
+  
+  
