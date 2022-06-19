@@ -4,7 +4,8 @@
   "description": "This GitHub Action helps edit a JSON file and set a field value",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/main.js"
+    "build": "ncc build src/main.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "author": "Jossef Harush",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.3"
+    "@actions/core": "^1.2.3",
+    "jest": "^28.1.1"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.4"
