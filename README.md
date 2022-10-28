@@ -56,7 +56,7 @@ jobs:
         npm run build
 
     - name: Update package.json version
-      uses: jossef/action-set-json-field@v2
+      uses: jossef/action-set-json-field@v2.1
       with:
         file: package.json
         field: version

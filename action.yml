@@ -16,7 +16,7 @@ inputs:
     default: ""
     description: "optional. if set to any non-empty value will parse the data in 'value' field to JSON"
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'edit'
