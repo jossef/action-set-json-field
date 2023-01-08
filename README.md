@@ -6,7 +6,7 @@ This GitHub Action helps edit a JSON file and set a field value
 Add this step in your workflow file
 ```yaml
 - name: Update my-file.json description
-  uses: jossef/action-set-json-field@v2
+  uses: jossef/action-set-json-field@v2.1
   with:
     file: my-file.json
     field: description
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
  
     - name: Gets semantic release info
       id: semantic_release_info
