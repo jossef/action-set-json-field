@@ -8,14 +8,17 @@ async function main() {
         let file = core.getInput('file', {required: true});
         let field = core.getInput('field', {required: true});
         let value = core.getInput('value', {required: true});
+        let shouldSplitField = core.getInput('should_split_field', {required: false});
+        shouldSplitField = shouldSplitField != 'false' 
         let parseJson = !!core.getInput('parse_json', {required: false});
+        
         if (parseJson) {
             value = JSON.parse(value)
         }
 
         let data = fs.readFileSync(file, 'utf8');
         let obj = JSON.parse(data);
-        obj = writer.write(obj, field, value);
+        obj = writer.write(obj, field, value, shouldSplitField);
         
         data = JSON.stringify(obj, null, 2);
         fs.writeFileSync(file, data, 'utf8');
