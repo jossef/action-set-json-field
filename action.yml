@@ -13,6 +13,7 @@ inputs:
     description: "value to set. string. e.g. 'v1.2.3'"
   should_split_field:
     required: false
+    default: true
     description: "default to true, set to false if field value contains . and should be kept"
   parse_json:
     required: false
