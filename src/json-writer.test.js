@@ -15,6 +15,15 @@ test("Write Nested", () => {
     expect( obj ).toEqual({ "account": { "username": "admin", "password": "test" }});
 });
 
+test("Write Simple with . in Field", () => {
+    const obj = writer.write({ 
+        "account": { 
+            "username": "admin" 
+        }
+    }, "account.password", "test", false);
+    expect( obj ).toEqual({ "account": { "username": "admin"},  "account.password": "test" });
+});
+
 test("Write Array", () => {
     const obj = writer.write({ 
         "accounts": [

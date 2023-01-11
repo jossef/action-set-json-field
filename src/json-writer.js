@@ -1,6 +1,6 @@
-function write(obj, field, value) {
+function write(obj, field, value, shouldSplitField = true) {
     const root = obj;
-    const parts = field.split(".");
+    const parts = shouldSplitField ? field.split(".") : [ field ];
     parts.forEach((part, index) => {
         let isLastItem = index === parts.length - 1;
 
